@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream-House</title>
+    <script src="./scripts/aframe.min.js"></script>
+    <script src="./pool/script/water.js"></script>
+    <script src="./pool/script/aframe.js"></script>
+    
+ 
+</head>
+<body>
+    <a-scene>
+        <!--Asset Management-->
+        <a-assets>
+        <img src="./texture/clear-sunny-sky.jpg" id="sunny">
+        
+        <img src="./texture/grass.jpg" id="grass">
+    <img src="./texture/floor.jpg" id="floor-driveway">
+        <img src="./texture/wall1.jpg" id="wall-texture">
+        <a-asset-item src="./models/Villa1/scene.gltf" id="villa-gltf"></a-asset-item>
+        <a-asset-item src="./models/street light/scene.gltf" id="street-light"></a-asset-item>
+        <a-asset-item src="./models/benz/scene.gltf" id="benz-car"></a-asset-item>
+        <a-asset-item src="./models/tesla/scene.gltf" id="tesla-car"></a-asset-item>
+        <a-asset-item src="./models/cadillac/scene.gltf" id="cadillac-car"></a-asset-item>
+        <a-asset-item src="./models/gate/scene.gltf" id="gate-model"></a-asset-item>        <a-asset-item src="./models/palmtree/scene.gltf" id="palmtree-model"></a-asset-item>
+        <a-asset-item src="./models/tree2/scene.gltf" id="tree2-model"></a-asset-item>      
+    </a-assets>
+
+       <!--Camera-->
+       <a-entity position="-2 5 75">
+           <a-camera look-controls position="0 10 40">
+           </a-camera>
+       </a-entity>
+       <!-- Swimming Pool -->
+           <a-water
+             opacity="0.7"
+             side="double"
+             width="8.8"
+             height="10"
+             base-color="lightblue"
+             foam-color="blue"
+             scale="1 1.7 1"
+             repeat="2"
+             voronoi-points="10"
+             rotation="90 90 0"
+             position="25.5 0.5 -14"
+           >
+           </a-water>
+
+       <!--Sky-->
+       <a-sky src="#sunny"></a-sky>
+
+       <!-- House Models -->
+       <a-entity gltf-model="#villa-gltf" position="0 0.1 0" scale ="2 3 2"></a-entity>
+
+   
+
+<a-entity>
+    <a-light type ="directional" intensity="" position ="-18 10 25"></a-light>
+</a-entity>
+       <!-- Benz Car -->
+       <a-entity gltf-model="#benz-car" position="-28 0.4 60" scale="350 350 350" rotation="0 90 0" material="color: #C0C0C0; metalness: 0.8; roughness: 0.2"></a-entity>
+
+       <!-- Tesla Car -->
+       <a-entity gltf-model="#tesla-car" position="17 0 50" scale="5 5 5" rotation="0 -90 0" material="color: #C0C0C0; metalness: 0.8; roughness: 0.2"></a-entity>
+
+       <!-- Cadillac Car -->
+       <a-entity gltf-model="#cadillac-car" position="40 1 58" scale="350 350 350" rotation="0 -90 0" material="color: #C0C0C0; metalness: 0.8; roughness: 0.2"></a-entity>
+
+       <!-- Palm Trees Along Left Wall -->
+       <a-entity gltf-model="#palmtree-model" position="-55 -1 -50" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="-55 -1 -5" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="-55 -1 20" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="-55 -2 45" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="-55 -1 70" scale="3 2 3"></a-entity>
+
+       <!-- Palm Trees Along Right Wall -->
+       <a-entity gltf-model="#palmtree-model" position="70 0 -50" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="70 0 -5" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="70 0 20" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="70 0 45" scale="3 2 3"></a-entity>
+       <a-entity gltf-model="#palmtree-model" position="70 0 70" scale="3 2 3"></a-entity>
+
+       <!-- Tree2 Models Before Gate -->
+       <a-entity gltf-model="#tree2-model" position="-28 0 86" scale="20 20 20 "></a-entity>
+       <a-entity gltf-model="#tree2-model" position="-50 0 86" scale="20 20 20"></a-entity>
+       <a-entity gltf-model="#tree2-model" position="60 0 86" scale="20 20 20"></a-entity>
+       <a-entity gltf-model="#tree2-model" position="30 0 86" scale="20 20 20"></a-entity>
+
+       <!-- Gate -->
+       <a-entity gltf-model="#gate-model" position="0 5 91" scale="1.9 1 1.3" rotation="0 0 0"></a-entity>
+
+  
+       <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+<a-light type="point" intensity="1" color="white" distance="5" position="-8.1643 1 14.70074" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-8.13682 2.0746 18.5591" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-8.13682 2.0746 22.23123" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-8.13682 2.0746 26.91975" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-8.13682 2.0746 30.57743" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-39.64713 1.21745 14.57119" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-39.51037 1.21745 16.88753" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-39.19429 1.0746 18.12" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-39.19429 1.0746 22.37629" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="13.95206 1.62261 6.98294" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="13.69584 1.62261 -5.47263" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="11.6696 1.62261 -5.47263" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="-0.6229 1.21745 -16.24393" light=""></a-light>
+       <a-light type="point" intensity="1" color="white" distance="5" position="3.57501 1.0746 8.01928" light="intensity: 1.52; distance: 7.17"></a-light>
+
+       <!-- Grass-Models -->
+       <a-entity>
+           <a-plane src="#grass" rotation="-90 0 0" scale="250 250" position="0 -0.5 0 " repeat="20 20"></a-plane>
+       </a-entity>
+
+<!-- Leading to Gate (proportional to gate dimensions) -->
+       <a-plane src="#floor-driveway" rotation="-90 0 0" width="35" height="40" position="0.5 0.2 88" repeat="2 19"></a-plane>
+
+       
+       <!-- Walls to Enclose the Property
+        Front Wall (South) -->
+       <a-box src="#wall-texture" width="50" height="6" depth="0.8" position="45 0.8 90" repeat="10 2"></a-box>
+              <a-box src="#wall-texture" width="50" height="6" depth="0.8" position="-45 0.8 90" repeat="10 2"></a-box>
+       
+
+       <!-- Back Wall (North) -->
+       <a-box src="#wall-texture" width="140" height="6" depth="0.8" position="0 0.8 -65" repeat="30 2"></a-box>
+       
+       <!--Left Wall (West) -->
+       <a-box src="#wall-texture" width="0.8" height="6" depth="155" position="-70 0.8 12" repeat="2 20"></a-box>
+       
+       <!-- Right Wall (East) -->
+       <a-box src="#wall-texture" width="0.8" height="6" depth="155" position="70 0.8 12" repeat="2 20"></a-box>
+
+       <!-- Pillars at Corners -->
+       <a-cylinder src="#wall-texture" height="6" radius="" position="-70 1 90" repeat="1 2"></a-cylinder>
+       <a-cylinder src="#wall-texture" height="6" radius="1." position="70 1 90" repeat="1 2"></a-cylinder>
+       <a-cylinder src="#wall-texture" height="6" radius="1" position="70 1 -65" repeat="1 2"></a-cylinder>
+       <a-cylinder src="#wall-texture" height="6" radius="1" position="-70 1 -65" repeat="1 2"></a-cylinder>
+       
+
+       <!-- Street-Light Models -->
+       <a-entity 
+       gltf-model="#street-light" 
+       position="8 -0.00932 47" 
+       scale="0.003 0.003 0.003"
+       rotation="0 90 0"
+       ></a-entity>
+       <a-light type="point" color="white" intensity="2" position="8 4.08276 47" distance="12" target="_blank" rotation="0 -90 0" light=""></a-light>
+
+
+       <a-entity 
+       gltf-model="#street-light" 
+       position="-24.0605 -0.00932 47" 
+       scale="0.003 0.003 0.003"
+       distance="8"
+       rotation="0 90 0"></a-entity>  
+       <a-light type="point" color="white" intensity="2" position="-24.0605 4.08276 47" distance="12" target="_blank" rotation="0 -90 0" light=""></a-light>    
+       
+    </a-scene>
+    <script>
+      const waterEl = document.querySelector("a-water");
+      if (waterEl) {
+        waterEl.setAttribute("animation", {
+          property: "scale",
+          // from: "10 2 1",
+          // to: "2 15 2",
+          dur: 50,
+          loop: true,
+          dir: "alternate",
+          easing: "easeOutElastic",
+        });
+      }
+    </script>
+</body>
+</html>
